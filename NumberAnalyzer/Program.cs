@@ -1,11 +1,12 @@
-﻿
-
-Console.WriteLine("Please Enter Your Name");
+﻿Console.WriteLine("Please Enter Your Name");
 
 string name = Console.ReadLine();
 
 
-for (int i = 0; i < 5; i++)
+
+bool playAgain = true;
+
+do
 {
     Console.WriteLine("Please enter a number between 1 and 100 inclusive");
 
@@ -31,4 +32,19 @@ for (int i = 0; i < 5; i++)
     {
         Console.WriteLine(name + ", you entered " + input + " - that number is Odd and greater than 60.");
     }
+
+
+    Console.WriteLine("Do you want to play again? (yes/no)");
+    string response = Console.ReadLine().ToUpper();
+    if (response == "YES")
+    {
+        playAgain = true;
+        Console.WriteLine("Great!");
+    }
+    else
+    {
+        playAgain = false;
+        Console.WriteLine("Thanks for participating. Goodbye!");
+    }
 }
+while (playAgain == true);
